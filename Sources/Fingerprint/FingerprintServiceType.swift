@@ -1,10 +1,10 @@
 import Foundation
 
-struct Token {
-    let bayonetID: String
+public struct Token {
+    public let bayonetID: String
 }
 
 @available(macOS 10.15.0, *)
-protocol FingerprintServiceProtocol {
+public protocol FingerprintServiceProtocol {
     func getToken() async throws -> Token
 }

@@ -5,7 +5,7 @@ public struct Fingerprint: FingerprintServiceProtocol {
     }
     
     @available(macOS 10.15, *)
-    func getToken() async throws -> Token {
+    public func getToken() async throws -> Token {
         return try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Token, Error>) in
                     let token: Token = Token(
                         bayonetID: "vallonet"
