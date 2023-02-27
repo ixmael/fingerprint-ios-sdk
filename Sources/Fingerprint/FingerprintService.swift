@@ -1,3 +1,4 @@
+import Foundation
 public struct Fingerprint: FingerprintServiceProtocol {
     public private(set) var text = "Hello, World!"
 
@@ -10,6 +11,8 @@ public struct Fingerprint: FingerprintServiceProtocol {
                     let token: Token = Token(
                         bayonetID: "vallonet"
                     )
+
+                    sleep(100)
 
                     continuation.resume(returning: token)
                 }
