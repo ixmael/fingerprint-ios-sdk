@@ -9,10 +9,10 @@ public struct Fingerprint: FingerprintServiceProtocol {
     public func getToken() async throws -> Token {
         return try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Token, Error>) in
                     let token: Token = Token(
-                        bayonetID: "vallonet"
+                        bayonetID: "a-bayonet-id-generated"
                     )
 
-                    sleep(100)
+                    sleep(10)
 
                     continuation.resume(returning: token)
                 }
