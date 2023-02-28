@@ -25,7 +25,7 @@ public struct FingerprintService: FingerprintServiceProtocol {
         let fingerprintproService = FingerprintProFactory.getInstance(restAPIToken.services.fingerprintjs.apiKey)
 
         do {
-            let fingerprintproDeviceID = try await fingerprintproService.getVisitorId()
+            let fingerprintproDeviceID = try await fingerprintproService.getVisitorId(metadata)
         } catch {
             print("error", error as Any)
         }
