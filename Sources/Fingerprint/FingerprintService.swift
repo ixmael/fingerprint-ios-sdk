@@ -33,7 +33,7 @@ public struct FingerprintService: FingerprintServiceProtocol {
         // Build the token
         let token: Token = Token(
             bayonetID: restAPIToken.bayonetID,
-            environment: restAPIToken.environment,
+            environment: restAPIToken.environment
         )
 
         return token
