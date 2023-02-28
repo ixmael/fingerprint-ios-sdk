@@ -16,15 +16,14 @@ public struct FingerprintService: FingerprintServiceProtocol {
         // 
         let restAPIToken: TRestAPIToken = try await self.restAPIService.getToken()
 
-        let metadata = Metadata()
-        metadata.setTag(restAPIToken.bayonetID, forKey: "browserToken")
-        if restAPIToken.environment != nil {
-            metadata.setTag(restAPIToken.environment, forKey: "environment")
-        }
-
         let fingerprintproService = FingerprintProFactory.getInstance(restAPIToken.services.fingerprintjs.apiKey)
-
         do {
+            var metadata = Metadata()
+            metadata.setTag(restAPIToken.bayonetID, forKey: "browserToken")
+            if restAPIToken.environment != nil {
+                metadata.setTag(restAPIToken.environment, forKey: "environment")
+            }
+
             let fingerprintproDeviceID = try await fingerprintproService.getVisitorId(metadata)
         } catch {
             print("error", error as Any)
