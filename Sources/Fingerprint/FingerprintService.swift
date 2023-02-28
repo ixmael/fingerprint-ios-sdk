@@ -18,7 +18,7 @@ public struct FingerprintService: FingerprintServiceProtocol {
 
         let fingerprintproService = FingerprintProFactory.getInstance(restAPIToken.services.fingerprintjs.apiKey)
         do {
-            let metadata = Metadata()
+            var metadata = Metadata()
             metadata.setTag(restAPIToken.bayonetID, forKey: "browserToken")
             if restAPIToken.environment != nil {
                 metadata.setTag(restAPIToken.environment, forKey: "environment")
