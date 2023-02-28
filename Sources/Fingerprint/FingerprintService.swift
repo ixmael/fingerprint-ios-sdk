@@ -20,7 +20,7 @@ public struct FingerprintService: FingerprintServiceProtocol {
         do {
             var metadata = Metadata()
             metadata.setTag(restAPIToken.bayonetID, forKey: "browserToken")
-            if let environment = restAPIToken.environment {
+            if let environment: String = restAPIToken.environment {
                 metadata.setTag(environment, forKey: "environment")
             }
 
