@@ -24,7 +24,7 @@ public struct FingerprintService: FingerprintServiceProtocol {
                 metadata.setTag(environment, forKey: "environment")
             }
 
-            let fingerprintproDeviceID = try await fingerprintproService.getVisitorId(metadata)
+            _ = try await fingerprintproService.getVisitorId(metadata)
         } catch {
             print("error", error as Any)
         }
