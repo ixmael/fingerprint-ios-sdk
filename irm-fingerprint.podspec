@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "Fingerprint"
+  spec.name         = "irm-fingerprint"
   spec.version      = "0.1.0"
   spec.summary      = "Fingerprint library to detect the device fingerprint."
 
@@ -39,7 +39,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT"
+  spec.license      = { :type => "MIT", :file => "LICENSE.md" }
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -91,6 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
+  spec.swift_version = '5.6'
   spec.source_files  = "Sources/Fingerprint/**/*.swift"
   spec.exclude_files = "Classes/Exclude"
 
